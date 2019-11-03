@@ -27,10 +27,10 @@ public class VarastoTest {
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
-    @Test
-    public void testiJonkaTuleeAntaaVirhe() {
-        assertEquals(100, varasto.getSaldo(), vertailuTarkkuus);
-    }
+//    @Test
+//    public void testiJonkaTuleeAntaaVirhe() {
+//        assertEquals(100, varasto.getSaldo(), vertailuTarkkuus);
+//    }
 
     @Test
     public void uudellaVarastollaOikeaTilavuus() {
