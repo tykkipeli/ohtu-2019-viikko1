@@ -24,14 +24,7 @@ public class Varasto {
         {
             this.tilavuus = 0.0;  // => käyttökelvoton varasto
         }
-        if (alkuSaldo < 0.0) {
-            this.saldo = 0.0;
-        } else if (alkuSaldo <= tilavuus) // mahtuu
-        {
-            this.saldo = alkuSaldo;
-        } else {
-            this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
-        }
+        doStuff(tilavuus,alkuSaldo);
     }
 
     // --- ottavat aksessorit eli getterit: ---
@@ -79,5 +72,16 @@ public class Varasto {
     // --- Merkkijonoesitys Varasto-oliolle: ----
     public String toString() {
         return ("saldo = " + saldo + ", vielä tilaa " + paljonkoMahtuu());
+    }
+
+    private void doStuff(double tilavuus, double alkuSaldo) {
+        if (alkuSaldo < 0.0) {
+            this.saldo = 0.0;
+        } else if (alkuSaldo <= tilavuus) // mahtuu
+        {
+            this.saldo = alkuSaldo;
+        } else {
+            this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
+        }
     }
 }
